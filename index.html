@@ -30,6 +30,7 @@
           <div class="pill-list" id="cat-list"></div>
 
           <div class="trust-line"><span data-icon="search"></span> 출처가 있는 답변만 드려요</div>
+          <div class="trust-line" id="vector-status" style="display:none"></div>
         </div>
       </section>
 
@@ -75,9 +76,10 @@
             <strong>생성 엔진</strong> — Gemini 2.0 Flash (사용자 API 키로 직접 호출, BYOK)<br />
             다른 엔진(OpenAI 등) 선택은 다음 업데이트에서 추가될 예정이에요.
           </div>
-          <div class="info-card">
-            <strong>검색 방식</strong> — 현재 버전은 BM25 키워드 검색만 사용해요.<br />
-            임베딩 기반 의미 검색(코사인 유사도)은 다음 업데이트에서 추가될 예정이에요.
+          <div class="field-group">
+            <label class="field-label" for="weight-slider">검색 가중치 — 키워드(BM25) ↔ 의미(코사인)</label>
+            <input id="weight-slider" type="range" min="0" max="1" step="0.1" />
+            <div class="field-help" id="weight-help">현재: BM25 50% · 코사인 50%</div>
           </div>
 
           <div class="field-group">

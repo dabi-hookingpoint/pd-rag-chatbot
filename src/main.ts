@@ -2,6 +2,7 @@ import chunksData from '../data/chunks.json';
 import { BM25 } from './bm25';
 import { hydrateIcons } from './icons';
 import { buildSystemPrompt, buildUserPrompt, judgeAnswer, streamAnswer, type StreamHandle } from './llm';
+import { hybridRetrieve, loadEmbeddings } from './search';
 import {
   badgeKindFor,
   CATEGORIES,
@@ -42,7 +43,9 @@ interface Message {
 const threads = new Map<string, Message[]>(CATEGORIES.map((c) => [c, []]));
 
 const KEY_STORAGE = 'hp_rag_api_key';
+const WEIGHT_STORAGE = 'hp_rag_cosine_weight';
 let apiKey = localStorage.getItem(KEY_STORAGE) || '';
+let cosineWeight = parseFloat(localStorage.getItem(WEIGHT_STORAGE) || '0.5');
 let activeTab: 'home' | 'chat' | 'settings' = 'home';
 let activeCategory: string | null = null;
 let currentStream: StreamHandle | null = null;
@@ -61,6 +64,8 @@ function switchTab(tab: 'home' | 'chat' | 'settings') {
   $$('.nav-btn').forEach((b) => b.classList.toggle('is-active', b.getAttribute('data-tab') === tab));
   if (tab === 'settings') {
     ($('#api-key-input') as HTMLInputElement).value = apiKey;
+    ($('#weight-slider') as HTMLInputElement).value = String(cosineWeight);
+    updateWeightHelp();
   }
   if (tab === 'chat') {
     setTimeout(() => ($('#chat-input') as HTMLInputElement)?.focus(), 50);
@@ -266,13 +271,6 @@ function renderMessages() {
   scroll.scrollTop = scroll.scrollHeight;
 }
 
-// ---------------- retrieval ----------------
-function retrieve(category: string, query: string): RetrievedChunk[] {
-  const ids = new Set(CHUNKS.filter((c) => c.category === category).map((c) => c.id));
-  const hits = bm25.search(query, ids, 5).filter((h) => h.score > 0);
-  return hits.map((h, i) => ({ ...(CHUNK_BY_ID.get(h.id) as Chunk), score: h.score, refIndex: i + 1 }));
-}
-
 // ---------------- sending ----------------
 async function sendMessage() {
   if (!activeCategory) return;
@@ -295,7 +293,21 @@ async function sendMessage() {
     return;
   }
 
-  const retrieved = retrieve(activeCategory, question);
+  const searchingMsg: Message = { role: 'assistant', text: '', streaming: true, isGreeting: true };
+  thread.push(searchingMsg);
+  renderMessages();
+  if (searchingMsg.bubbleEl) searchingMsg.bubbleEl.textContent = '근거 검색 중…';
+
+  const retrieved = await hybridRetrieve({
+    bm25,
+    chunkById: CHUNK_BY_ID,
+    category: activeCategory,
+    query: question,
+    apiKey: apiKey || null,
+    cosineWeight,
+    topK: 5,
+  });
+  thread.splice(thread.indexOf(searchingMsg), 1);
 
   if (retrieved.length === 0) {
     thread.push({
@@ -372,6 +384,12 @@ function setSending(sending: boolean) {
   btn.onclick = null;
 }
 
+function updateWeightHelp() {
+  const bm25Pct = Math.round((1 - cosineWeight) * 100);
+  const cosPct = Math.round(cosineWeight * 100);
+  $('#weight-help').textContent = `현재: BM25 ${bm25Pct}% · 코사인 ${cosPct}%`;
+}
+
 // ---------------- modal ----------------
 function openSourceModal(c: RetrievedChunk) {
   const kind = badgeKindFor(c.source);
@@ -384,9 +402,28 @@ function openSourceModal(c: RetrievedChunk) {
 }
 
 // ---------------- wiring ----------------
+function initVectorStore() {
+  const statusEl = $('#vector-status') as HTMLElement;
+  statusEl.style.display = 'flex';
+  statusEl.textContent = '벡터스토어 준비 중… 0%';
+  loadEmbeddings((pct) => {
+    if (pct >= 1) {
+      statusEl.style.display = 'none';
+      return;
+    }
+    statusEl.textContent = `벡터스토어 준비 중… ${Math.round(pct * 100)}%`;
+  }).catch(() => {
+    statusEl.textContent = '벡터스토어를 불러오지 못했어요 — 키워드 검색으로만 동작해요';
+    setTimeout(() => (statusEl.style.display = 'none'), 4000);
+  });
+}
+
 function init() {
   hydrateIcons(document);
   renderCatList();
+  initVectorStore();
+  ($('#weight-slider') as HTMLInputElement).value = String(cosineWeight);
+  updateWeightHelp();
 
   $$('.nav-btn').forEach((b) =>
     b.addEventListener('click', () => switchTab(b.getAttribute('data-tab') as any))
@@ -414,6 +451,12 @@ function init() {
     toast.style.display = 'inline';
     setTimeout(() => (toast.style.display = 'none'), 1600);
     if (activeCategory) renderChatHeader();
+  });
+
+  $('#weight-slider').addEventListener('input', (e) => {
+    cosineWeight = parseFloat((e.target as HTMLInputElement).value);
+    localStorage.setItem(WEIGHT_STORAGE, String(cosineWeight));
+    updateWeightHelp();
   });
 
   $('#clear-chats-btn').addEventListener('click', () => {
