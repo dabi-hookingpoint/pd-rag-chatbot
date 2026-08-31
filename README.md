@@ -2,7 +2,8 @@
 
 영화·드라마 제작사 "후킹포인트"에 대한 문의(제작 라인업 / IP 기획 / 편집 / 후반작업 / 회사 소개)에 공개 자료를 근거로 답하는 RAG 챗봇입니다. Main Quest 3 과제 산출물이며, 설계 배경은 [PRD.md](./PRD.md)에 있습니다.
 
-**배포 URL**: (배포 후 채워 넣을 예정)
+**배포 URL**: https://dabi-hookingpoint.github.io/pd-rag-chatbot/
+**저장소**: https://github.com/dabi-hookingpoint/pd-rag-chatbot
 
 ## 사용 방법
 
