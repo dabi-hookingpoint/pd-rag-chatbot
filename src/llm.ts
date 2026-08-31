@@ -1,6 +1,6 @@
 import type { JudgeResult, RetrievedChunk } from './types';
 
-const MODEL = 'gemini-3.6-flash';
+const MODEL = 'gemini-flash-lite-latest';
 const API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
 
 function buildContextBlock(chunks: RetrievedChunk[]): string {
