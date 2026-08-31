@@ -56,7 +56,7 @@ export function streamAnswer(
           body: JSON.stringify({
             systemInstruction: { parts: [{ text: systemPrompt }] },
             contents: [{ role: 'user', parts: [{ text: userPrompt }] }],
-            generationConfig: { temperature: 0.4 },
+            generationConfig: { temperature: 0.4, thinkingConfig: { thinkingBudget: 512 } },
           }),
         }
       );
@@ -137,7 +137,11 @@ export async function judgeAnswer(
         ],
       },
     ],
-    generationConfig: { temperature: 0, responseMimeType: 'application/json' },
+    generationConfig: {
+      temperature: 0,
+      responseMimeType: 'application/json',
+      thinkingConfig: { thinkingBudget: 256 },
+    },
   };
 
   const res = await fetch(`${API_BASE}/${MODEL}:generateContent?key=${encodeURIComponent(apiKey)}`, {
