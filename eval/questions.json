@@ -1,0 +1,43 @@
+[
+  {"id": 1, "category": "제작", "q": "지금 어떤 작품 준비 중이에요?", "expected": "grounded"},
+  {"id": 2, "category": "제작", "q": "예술영화는 몇 편 준비 중이에요?", "expected": "grounded"},
+  {"id": 3, "category": "제작", "q": "숏폼 드라마 제목이 뭐예요?", "expected": "refuse"},
+  {"id": 4, "category": "제작", "q": "지금 준비 중인 드라마 두 편 캐스팅이 어떻게 되나요?", "expected": "refuse"},
+  {"id": 5, "category": "제작", "q": "제작 협업 문의는 어떻게 하나요?", "expected": "grounded"},
+
+  {"id": 6, "category": "기획", "q": "웹툰 원작을 영상화하려면 어떤 계약서를 참고해야 하나요?", "expected": "industry_label"},
+  {"id": 7, "category": "기획", "q": "웹소설 출판권 표준계약서가 있나요?", "expected": "industry_label"},
+  {"id": 8, "category": "기획", "q": "영화 투자 표준계약서는 언제 발표됐나요?", "expected": "industry_label"},
+  {"id": 9, "category": "기획", "q": "2023년 웹툰산업 매출이 얼마였나요?", "expected": "industry_label"},
+  {"id": 10, "category": "기획", "q": "지금 개발 중인 IP 프로젝트 시놉시스 알려주세요", "expected": "refuse"},
+  {"id": 11, "category": "기획", "q": "IP 프로젝트 주요 작가가 누구인가요?", "expected": "refuse"},
+  {"id": 12, "category": "기획", "q": "IP 프로젝트 열람은 어떻게 신청하나요?", "expected": "grounded"},
+  {"id": 13, "category": "기획", "q": "지금 IP 프로젝트가 총 몇 개 진행 중인가요?", "expected": "grounded"},
+
+  {"id": 14, "category": "편집", "q": "메리 베리 러브 감독이 누구예요?", "expected": "grounded"},
+  {"id": 15, "category": "편집", "q": "지구 최후의 여자는 어디서 볼 수 있어요?", "expected": "grounded"},
+  {"id": 16, "category": "편집", "q": "더러운 돈에 손대지 마라 캐스팅이 어떻게 되나요?", "expected": "grounded"},
+  {"id": 17, "category": "편집", "q": "고백을 못하고는 원작이 있나요?", "expected": "grounded"},
+  {"id": 18, "category": "편집", "q": "조선변호사 감독이 누구예요?", "expected": "grounded"},
+  {"id": 19, "category": "편집", "q": "인간실격 방영 기간이 언제였나요?", "expected": "grounded"},
+  {"id": 20, "category": "편집", "q": "에움길은 어떤 영화제에서 수상했나요?", "expected": "grounded"},
+  {"id": 21, "category": "편집", "q": "편집 외에 다른 서비스도 하나요?", "expected": "grounded"},
+  {"id": 22, "category": "편집", "q": "편집 의뢰는 어떻게 하나요?", "expected": "grounded"},
+  {"id": 23, "category": "편집", "q": "메리 베리 러브 편집 포인트가 뭐예요?", "expected": "refuse"},
+
+  {"id": 24, "category": "후반문의", "q": "VFX 협업은 어떻게 진행되나요?", "expected": "grounded"},
+  {"id": 25, "category": "후반문의", "q": "동은철 이사가 누구예요?", "expected": "grounded"},
+  {"id": 26, "category": "후반문의", "q": "AI 작업 의뢰하면 어떤 과정으로 진행되나요?", "expected": "grounded"},
+  {"id": 27, "category": "후반문의", "q": "편집 스태프 표준근로계약서가 있나요?", "expected": "industry_label"},
+  {"id": 28, "category": "후반문의", "q": "영화 스태프 표준근로계약서에 편집자도 포함되나요?", "expected": "industry_label"},
+  {"id": 29, "category": "후반문의", "q": "방송 제작스태프 표준계약서는 몇 종류인가요?", "expected": "industry_label"},
+  {"id": 30, "category": "후반문의", "q": "색보정은 몇 단계로 진행되나요?", "expected": "refuse"},
+  {"id": 31, "category": "후반문의", "q": "사운드 믹싱은 어떤 툴을 쓰나요?", "expected": "refuse"},
+  {"id": 32, "category": "후반문의", "q": "후반작업 안전보건 관련 연구가 있나요?", "expected": "grounded"},
+
+  {"id": 33, "category": "회사정보", "q": "후킹포인트는 어떤 회사예요?", "expected": "refuse"},
+  {"id": 34, "category": "회사정보", "q": "연락처가 어떻게 되나요?", "expected": "grounded"},
+  {"id": 35, "category": "회사정보", "q": "후킹포인트가 편집한 작품이 몇 편이에요?", "expected": "grounded"},
+  {"id": 36, "category": "회사정보", "q": "IP 프로젝트는 어떻게 열람하나요?", "expected": "grounded"},
+  {"id": 37, "category": "회사정보", "q": "채용 중인가요?", "expected": "refuse"}
+]

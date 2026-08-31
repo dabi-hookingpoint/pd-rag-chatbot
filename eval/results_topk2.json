@@ -1,0 +1,657 @@
+[
+  {
+    "id": 1,
+    "category": "제작",
+    "question": "지금 어떤 작품 준비 중이에요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-facts-lineup-current-production"
+    ],
+    "retrieved_count": 1,
+    "answer": "현재 후킹포인트에서는 예술영화 1편, 저예산 상업영화 1편, 드라마 2편, 숏폼 드라마 1편을 준비하고 있습니다 [1]. 이는 아직 공식 홈페이지에 게시되지 않은 대표 확인 1차 정보랍니다 [1]. 개별 프로젝트의 제목이나 시놉시스 같은 상세 정보는 비공개 상태예요 [1].",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": true,
+      "note": "근거자료에 없는 '공식 홈페이지에 게시되지 않은 대표 확인 1차 정보'라는 내용을 답변에 포함했습니다."
+    }
+  },
+  {
+    "id": 2,
+    "category": "제작",
+    "question": "예술영화는 몇 편 준비 중이에요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-facts-lineup-current-production"
+    ],
+    "retrieved_count": 1,
+    "answer": "예술영화는 현재 1편을 준비 중입니다 [1]. 이 정보는 아직 공식 홈페이지에 게시되지 않은 대표 확인 1차 정보랍니다 [1].",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": true,
+      "note": "예술영화 1편 준비 중이라는 사실은 근거에 있으나, 공식 홈페이지 게시 여부 등은 근거에 없습니다."
+    }
+  },
+  {
+    "id": 3,
+    "category": "제작",
+    "question": "숏폼 드라마 제목이 뭐예요?",
+    "expected": "refuse",
+    "retrieved_ids": [
+      "hookingpoint-facts-lineup-current-production"
+    ],
+    "retrieved_count": 1,
+    "answer": "현재 준비 중인 숏폼 드라마의 제목을 포함한 상세 정보는 비공개 상태입니다 [1]. 이는 공식 홈페이지에 아직 게시되지 않은 대표 확인 1차 정보랍니다 [1].",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "근거자료를 바탕으로 숏폼 드라마 제목이 비공개임을 정확히 답변하였습니다."
+    }
+  },
+  {
+    "id": 4,
+    "category": "제작",
+    "question": "지금 준비 중인 드라마 두 편 캐스팅이 어떻게 되나요?",
+    "expected": "refuse",
+    "retrieved_ids": [
+      "hookingpoint-facts-lineup-current-production"
+    ],
+    "retrieved_count": 1,
+    "answer": "현재 후킹포인트는 드라마 2편을 준비 중이지만, 개별 프로젝트의 제목과 시놉시스, 주요 스태프 등 상세 정보는 비공개로 되어 있어요 [1]. 캐스팅 정보 역시 이 비공개 항목에 포함되어 현재는 확인이 어렵답니다 [1]. (참고로 이 내용은 아직 공식 홈페이지에 게시되지 않은 대표 확인 1차 정보예요 [1].)",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "근거에 없는 공식 홈페이지 언급이 일부 포함되었으나 전반적으로 근거에 기반하여 잘 답변함."
+    }
+  },
+  {
+    "id": 5,
+    "category": "제작",
+    "question": "제작 협업 문의는 어떻게 하나요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-contact-production",
+      "hookingpoint-facts-lineup-current-production"
+    ],
+    "retrieved_count": 2,
+    "answer": "제작 협업 제안은 이메일(hooking.point@gmail.com)을 통해 문의하실 수 있습니다 [1]. 편집 의뢰와 IP 자료 요청 역시 해당 이메일로 가능하니 편하게 연락 주세요 [1].",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "근거자료의 내용을 바탕으로 정확하게 답변하였습니다."
+    }
+  },
+  {
+    "id": 6,
+    "category": "기획",
+    "question": "웹툰 원작을 영상화하려면 어떤 계약서를 참고해야 하나요?",
+    "expected": "industry_label",
+    "retrieved_ids": [
+      "mcst-webtoon-standard-contracts-010",
+      "mcst-film-investment-standard-contract-012"
+    ],
+    "retrieved_count": 2,
+    "answer": "웹툰 원작을 영상화할 때는 문화체육관광부에서 제공하는 '2차적저작물작성권(영상화 등) 이용허락·양도 계약서'나 '웹툰연재' 등 6종의 만화(웹툰) 분야 표준계약서를 참고하시면 됩니다 [1]. \n\n참고로, 이건 후킹포인트만의 정보가 아니라 업계 일반 기준이에요 [1][2].",
+    "judge": {
+      "groundedness": 0.5,
+      "refusal_appropriate": null,
+      "unsupported_claims": true,
+      "note": "근거자료에 없는 '후킹포인트' 등의 사소한 사족이 포함되어 있어 감점했습니다."
+    }
+  },
+  {
+    "id": 7,
+    "category": "기획",
+    "question": "웹소설 출판권 표준계약서가 있나요?",
+    "expected": "industry_label",
+    "retrieved_ids": [
+      "mcst-webnovel-standard-contracts-011",
+      "mcst-webtoon-standard-contracts-010"
+    ],
+    "retrieved_count": 2,
+    "answer": "문화체육관광부에서 2025년 3월에 제정된 웹소설 분야 표준계약서(출판권설정, 전자출판배타적발행권설정, 연재계약서)를 제공하고 있습니다 [1]. \n\n참고로 이건 후킹포인트만의 정보가 아니라 업계 일반 기준이에요. 추가 문의가 있으시면 이메일로 연락해 주시기 바랍니다.",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": true,
+      "note": "근거에 없는 후킹포인트 언급과 이메일 안내 내용이 포함되어 있습니다."
+    }
+  },
+  {
+    "id": 8,
+    "category": "기획",
+    "question": "영화 투자 표준계약서는 언제 발표됐나요?",
+    "expected": "industry_label",
+    "retrieved_ids": [
+      "mcst-film-investment-standard-contract-012",
+      "mcst-webnovel-standard-contracts-011"
+    ],
+    "retrieved_count": 2,
+    "answer": "영화 투자 표준계약서는 2014년에 발표되었습니다 [1]. 참고로, 이건 후킹포인트만의 정보가 아니라 업계 일반 기준이에요.",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": true,
+      "note": "영화 투자 표준계약서의 발표 연도는 근거자료와 일치하나, 후킹포인트 관련 내용은 근거에 없습니다."
+    }
+  },
+  {
+    "id": 9,
+    "category": "기획",
+    "question": "2023년 웹툰산업 매출이 얼마였나요?",
+    "expected": "industry_label",
+    "retrieved_ids": [
+      "kocca-webtoon-industry-survey-2024-013",
+      "mcst-webtoon-standard-contracts-010"
+    ],
+    "retrieved_count": 2,
+    "answer": "2023년 웹툰산업 매출은 2조 1,890억 원으로 전년 대비 19.7% 증가했습니다 [1]. 참고로 이 정보는 후킹포인트만의 정보가 아니라 업계 일반 기준이에요 [1].",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": true,
+      "note": "매출액 관련 내용은 근거자료에 기반하나, 후킹포인트 관련 내용은 근거자료에 없습니다."
+    }
+  },
+  {
+    "id": 10,
+    "category": "기획",
+    "question": "지금 개발 중인 IP 프로젝트 시놉시스 알려주세요",
+    "expected": "refuse",
+    "retrieved_ids": [
+      "hookingpoint-ip-development-policy-014",
+      "hookingpoint-facts-lineup-current-planning"
+    ],
+    "retrieved_count": 2,
+    "answer": "현재 개발 중인 오리지널 IP 프로젝트의 상세정보는 관리자로부터 열람 권한을 부여받은 회원만 확인할 수 있습니다 [1]. 열람을 원하시면 hooking.point@gmail.com으로 문의해 주시기 바랍니다 [1]. 참고로 현재 준비 중인 라인업의 개별 프로젝트 제목과 시놉시스는 비공개 상태입니다 [2].",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "근거자료의 내용을 바탕으로 정확하게 답변하였습니다."
+    }
+  },
+  {
+    "id": 11,
+    "category": "기획",
+    "question": "IP 프로젝트 주요 작가가 누구인가요?",
+    "expected": "refuse",
+    "retrieved_ids": [
+      "hookingpoint-ip-development-policy-014",
+      "hookingpoint-facts-lineup-current-planning"
+    ],
+    "retrieved_count": 2,
+    "answer": "제공된 자료에서는 IP 프로젝트의 주요 작가가 누구인지 확인할 수 없어요 [1][2]. 관련 문의는 hooking.point@gmail.com으로 해 주시기 바랍니다 [1].",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": true,
+      "unsupported_claims": false,
+      "note": "제공된 근거자료를 바탕으로 작가 정보를 알 수 없음을 정확히 안내하고 문의 방법을 올바르게 답변했습니다."
+    }
+  },
+  {
+    "id": 12,
+    "category": "기획",
+    "question": "IP 프로젝트 열람은 어떻게 신청하나요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-ip-development-policy-014",
+      "hookingpoint-contact-planning"
+    ],
+    "retrieved_count": 2,
+    "answer": "IP 프로젝트의 상세정보를 열람하려면 관리자로부터 열람 권한을 부여받아야 하며, hooking.point@gmail.com으로 이메일을 보내 신청하실 수 있습니다 [1][2]. 권한을 부여받은 회원만 시놉시스와 기획의도 등 상세 정보를 확인하실 수 있으니 참고해 주세요 [1].",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "제공된 근거자료의 내용을 정확하게 바탕으로 작성되었습니다."
+    }
+  },
+  {
+    "id": 13,
+    "category": "기획",
+    "question": "지금 IP 프로젝트가 총 몇 개 진행 중인가요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-ip-development-policy-014",
+      "hookingpoint-facts-lineup-current-planning"
+    ],
+    "retrieved_count": 2,
+    "answer": "현재 후킹포인트는 예술영화 1편, 저예산 상업영화 1편, 드라마 2편, 숏폼 드라마 1편으로 총 5개의 IP 프로젝트를 준비 중입니다 [2]. 이는 아직 공식 홈페이지에 게시되지 않은 대표 확인 1차 정보입니다 [2]. 개별 프로젝트의 제목과 시놉시스는 비공개로 관리되고 있습니다 [2].",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": true,
+      "note": "근거자료에 없는 '이는 아직 공식 홈페이지에 게시되지 않은 대표 확인 1차 정보입니다'라는 주장을 포함하고 있습니다."
+    }
+  },
+  {
+    "id": 14,
+    "category": "편집",
+    "question": "메리 베리 러브 감독이 누구예요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-editing-merry-berry-love",
+      "hookingpoint-editing-dirty-money"
+    ],
+    "retrieved_count": 2,
+    "answer": "드라마 '메리 베리 러브'의 감독은 김수정, 노영섭 감독님입니다 [1]. 다른 궁금한 점이 있으시면 언제든 편하게 물어보세요!",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "근거자료에 명시된 감독 정보를 정확하게 답변하였습니다."
+    }
+  },
+  {
+    "id": 15,
+    "category": "편집",
+    "question": "지구 최후의 여자는 어디서 볼 수 있어요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-editing-last-woman-on-earth",
+      "hookingpoint-contact-editing"
+    ],
+    "retrieved_count": 2,
+    "answer": "영화 '지구 최후의 여자'에 대한 정보는 씨네21에서 확인하실 수 있습니다 [1]. 다만, 어디서 시청할 수 있는지에 대한 구체적인 상영 정보는 제공된 자료에 나와 있지 않습니다 [1]. \n\n제공된 자료에서는 확인되지 않았어요. 관련 문의는 이메일(hooking.point@gmail.com)로 문의해 주시기 바랍니다 [2].",
+    "judge": {
+      "groundedness": 0.9,
+      "refusal_appropriate": false,
+      "unsupported_claims": false,
+      "note": "제공된 근거 자료를 바탕으로 영화 정보 확인처를 안내하고 시청 정보 부족을 적절히 답변함."
+    }
+  },
+  {
+    "id": 16,
+    "category": "편집",
+    "question": "더러운 돈에 손대지 마라 캐스팅이 어떻게 되나요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-editing-dirty-money",
+      "hookingpoint-editing-last-woman-on-earth"
+    ],
+    "retrieved_count": 2,
+    "answer": "영화 '더러운 돈에 손대지 마라'의 캐스팅 정보는 제공된 자료에서 확인되지 않았어요 [1]. 관련 문의는 후킹포인트 공식 이메일로 연락해 주시기 바랍니다.",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": true,
+      "unsupported_claims": false,
+      "note": "제공된 근거자료에 캐스팅 정보가 없어 적절하게 안내함."
+    }
+  },
+  {
+    "id": 17,
+    "category": "편집",
+    "question": "고백을 못하고는 원작이 있나요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-editing-boys-be-brave"
+    ],
+    "retrieved_count": 1,
+    "answer": "드라마 '고백을 못하고'는 웹툰 작가 석영의 동명 웹툰(미스터블루)이 원작입니다 [1]. 티빙에서 시청하실 수 있습니다 [1].",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "답변의 모든 내용은 제공된 근거자료에 정확히 부합합니다."
+    }
+  },
+  {
+    "id": 18,
+    "category": "편집",
+    "question": "조선변호사 감독이 누구예요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-editing-joseon-attorney",
+      "hookingpoint-editing-dirty-money"
+    ],
+    "retrieved_count": 2,
+    "answer": "드라마 '조선변호사'의 감독은 김승호, 이한준 감독님입니다 [1]. 더 궁금한 점이 있으시다면 언제든 문의해 주세요!",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "근거자료를 바탕으로 정확하게 답변하였습니다."
+    }
+  },
+  {
+    "id": 19,
+    "category": "편집",
+    "question": "인간실격 방영 기간이 언제였나요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-editing-ingan-siljyeok",
+      "hookingpoint-editing-night-of-the-undead"
+    ],
+    "retrieved_count": 2,
+    "answer": "드라마 '인간실격'의 방영 기간은 2021년 9월 4일부터 10월 24일까지였습니다 [1]. 다른 문의 사항이 있으시면 언제든 말씀해 주세요!",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "근거자료를 바탕으로 정확하고 충실하게 답변하였습니다."
+    }
+  },
+  {
+    "id": 20,
+    "category": "편집",
+    "question": "에움길은 어떤 영화제에서 수상했나요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-editing-a-long-way-around",
+      "hookingpoint-editing-between-the-two-of-us"
+    ],
+    "retrieved_count": 2,
+    "answer": "다큐멘터리 영화 '에움길'은 제52회 월드페스트-휴스턴 국제영화제 레미상을 포함하여 총 5개 영화제에서 수상했습니다 [1].",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "근거자료에 있는 내용을 정확하게 바탕으로 답변을 작성하였습니다."
+    }
+  },
+  {
+    "id": 21,
+    "category": "편집",
+    "question": "편집 외에 다른 서비스도 하나요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-facts-editing-extra-services-020",
+      "hookingpoint-editing-last-woman-on-earth"
+    ],
+    "retrieved_count": 2,
+    "answer": "네, 후킹포인트에서는 편집 외에도 시나리오 피드백, 요청 시 스토리보드 작업에 대한 주기적 참여, 종합편집(종편) 참여 서비스를 제공하고 있어요 [1]. \n\n참고로 이 내용은 아직 공식 홈페이지에 게시되지 않은 대표 확인 1차 정보랍니다 [1]! 다른 문의가 있으시면 편하게 말씀해 주세요.",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": true,
+      "note": "근거자료 [1]에 없는 공식 홈페이지 미게시 관련 사족을 포함하고 있어 unsupported_claims가 true입니다."
+    }
+  },
+  {
+    "id": 22,
+    "category": "편집",
+    "question": "편집 의뢰는 어떻게 하나요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-contact-editing",
+      "hookingpoint-editing-last-woman-on-earth"
+    ],
+    "retrieved_count": 2,
+    "answer": "편집 의뢰는 이메일(hooking.point@gmail.com)을 통해 하실 수 있습니다 [1]. 실제 편집 과정은 홈페이지의 필모그래피(EDITING) 페이지에서 확인하실 수 있으니 참고해 주세요 [1].",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "제공된 근거자료의 내용을 정확하게 바탕으로 답변을 작성했습니다."
+    }
+  },
+  {
+    "id": 23,
+    "category": "편집",
+    "question": "메리 베리 러브 편집 포인트가 뭐예요?",
+    "expected": "refuse",
+    "retrieved_ids": [
+      "hookingpoint-editing-merry-berry-love",
+      "hookingpoint-facts-editing-extra-services-020"
+    ],
+    "retrieved_count": 2,
+    "answer": "드라마 '메리 베리 러브'의 편집 포인트는 아직 공개되지 않았습니다 [1]. 다른 문의 사항이 있으시면 언제든지 말씀해 주세요!",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "근거자료에 기반하여 편집 포인트가 아직 공개되지 않았음을 정확하게 답변하였습니다."
+    }
+  },
+  {
+    "id": 24,
+    "category": "후반문의",
+    "question": "VFX 협업은 어떻게 진행되나요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-contact-post",
+      "hookingpoint-facts-vfx-partnership-018"
+    ],
+    "retrieved_count": 2,
+    "answer": "VFX 협업은 이메일(hooking.point@gmail.com)을 통해 문의하실 수 있습니다 [1]. 또한 사외이사 동은철의 소속사인 원컨텐츠가 후킹포인트의 협업사 관계여서, 이 네트워크를 통해 실무 협업이 가능하다고 대표 확인 결과 안내되어 있습니다 [2].",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "제공된 근거자료의 내용을 정확하게 바탕으로 답변을 작성하였습니다."
+    }
+  },
+  {
+    "id": 25,
+    "category": "후반문의",
+    "question": "동은철 이사가 누구예요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-facts-vfx-partnership-018"
+    ],
+    "retrieved_count": 1,
+    "answer": "동은철 이사님은 사외사이시자 VFX 슈퍼바이저 출신으로 20년 이상 경력을 가지고 계시며, 이 정보는 아직 공식 홈페이지에 게시되지 않은 대표 확인 1차 정보입니다 [1]. 또한 이사님의 소속사인 원컨텐츠는 후킹포인트와 협업사 관계여서 VFX가 필요한 프로젝트는 이 네트워크를 통해 실무 협업이 가능합니다 [1].",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": true,
+      "note": "근거자료에 없는 '공식 홈페이지에 게시되지 않은 대표 확인 1차 정보'라는 내용을 답변에 추가했습니다."
+    }
+  },
+  {
+    "id": 26,
+    "category": "후반문의",
+    "question": "AI 작업 의뢰하면 어떤 과정으로 진행되나요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-facts-ai-pipeline-019",
+      "hookingpoint-contact-post"
+    ],
+    "retrieved_count": 2,
+    "answer": "AI 작업을 의뢰하시면 기획, 스토리보드, 3D 작업(현장 촬영 비용 절감), 그리고 작업물 익스포트 순으로 공정이 진행됩니다 [1]. 이 내용은 아직 공식 홈페이지에 게시되지 않은 대표 확인 1차 정보입니다 [1]. 추가적인 문의는 이메일(hooking.point@gmail.com)을 이용해 주세요 [2].",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": true,
+      "note": "근거자료에 없는 '대표 확인 1차 정보'라는 내용을 추가로 언급하여 환각이 발생했습니다."
+    }
+  },
+  {
+    "id": 27,
+    "category": "후반문의",
+    "question": "편집 스태프 표준근로계약서가 있나요?",
+    "expected": "industry_label",
+    "retrieved_ids": [
+      "kofic-staff-standard-contract-notice-016",
+      "mcst-broadcast-staff-standard-contracts-017"
+    ],
+    "retrieved_count": 2,
+    "answer": "편집 스태프를 포함하여 제작·연출·촬영 등 전 스태프 직군을 계약 대상으로 명시한 영화스태프 표준근로계약서 발표 공지가 있습니다 [1]. 다만, 이는 후킹포인트만의 정보가 아니라 업계 일반 기준이에요 [1][2].",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": true,
+      "note": "근거자료에 없는 '후킹포인트만의 정보가 아니라 업계 일반 기준이에요'라는 주장이 포함되어 있습니다."
+    }
+  },
+  {
+    "id": 28,
+    "category": "후반문의",
+    "question": "영화 스태프 표준근로계약서에 편집자도 포함되나요?",
+    "expected": "industry_label",
+    "retrieved_ids": [
+      "kofic-staff-standard-contract-notice-016",
+      "mcst-film-labor-standard-contract-015"
+    ],
+    "retrieved_count": 2,
+    "answer": "영화 스태프 표준근로계약서에는 편집자도 포함됩니다 [1][2]. 다만, 이건 후킹포인트만의 정보가 아니라 업계 일반 기준이에요 [1][2].",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": true,
+      "note": "편집자가 포함된다는 사실은 근거자료에 있으나, '후킹포인트만의 정보가 아니라 업계 일반 기준이에요'라는 내용은 근거자료에 없습니다."
+    }
+  },
+  {
+    "id": 29,
+    "category": "후반문의",
+    "question": "방송 제작스태프 표준계약서는 몇 종류인가요?",
+    "expected": "industry_label",
+    "retrieved_ids": [
+      "mcst-broadcast-staff-standard-contracts-017",
+      "kofic-staff-standard-contract-notice-016"
+    ],
+    "retrieved_count": 2,
+    "answer": "방송영상프로그램 제작스태프 표준계약서는 근로, 하도급, 위탁 계약서로 총 3종이 있습니다 [1]. \n\n참고로 이건 후킹포인트만의 정보가 아니라 업계 일반 기준이에요 [1][2]. 다른 문의 사항이 있으시면 언제든 말씀해 주세요!",
+    "judge": {
+      "groundedness": 0.8,
+      "refusal_appropriate": null,
+      "unsupported_claims": true,
+      "note": "근거에 없는 '후킹포인트' 및 '업계 일반 기준' 등의 사족이 포함되어 있습니다."
+    }
+  },
+  {
+    "id": 30,
+    "category": "후반문의",
+    "question": "색보정은 몇 단계로 진행되나요?",
+    "expected": "refuse",
+    "retrieved_ids": [
+      "hookingpoint-facts-ai-pipeline-019"
+    ],
+    "retrieved_count": 1,
+    "answer": "제공된 자료에 따르면 AI 작업 의뢰 시 공정은 기획, 스토리보드, 3D 작업(현장 촬영 비용 절감), 작업물 익스포트 순으로 진행됩니다 [1]. 색보정에 대한 내용은 공식 홈페이지에 아직 게시되지 않은 대표 확인 1차 정보인 해당 자료에서 확인되지 않아요 [1]. 관련하여 추가 문의가 있으시다면 담당 이메일로 문의해 주시기 바랍니다.",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": true,
+      "unsupported_claims": false,
+      "note": "근거자료에 없는 색보정 관련 질문에 대해 적절히 거절하고 자료에 기반한 내용을 충실히 답변함."
+    }
+  },
+  {
+    "id": 31,
+    "category": "후반문의",
+    "question": "사운드 믹싱은 어떤 툴을 쓰나요?",
+    "expected": "refuse",
+    "retrieved_ids": [],
+    "retrieved_count": 0,
+    "answer": "제공된 자료에서는 확인되지 않았어요. 위의 문의 버튼으로 직접 연락해주시면 정확히 안내해드릴게요.",
+    "judge": {
+      "groundedness": 0,
+      "refusal_appropriate": true,
+      "unsupported_claims": false,
+      "note": "검색 결과 없음 — 사전 규칙에 의한 자동 거절 (LLM 호출 생략)"
+    }
+  },
+  {
+    "id": 32,
+    "category": "후반문의",
+    "question": "후반작업 안전보건 관련 연구가 있나요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-facts-ai-pipeline-019",
+      "hookingpoint-contact-post"
+    ],
+    "retrieved_count": 2,
+    "answer": "제공된 자료에서는 후반작업 안전보건 관련 연구에 대해 확인되지 않았어요. 관련 문의는 이메일(hooking.point@gmail.com)로 문의해 주시기 바랍니다 [1][2].",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": true,
+      "unsupported_claims": false,
+      "note": "제공된 근거에 없는 내용에 대해 적절히 거절하고 관련 연락처를 안내함."
+    }
+  },
+  {
+    "id": 33,
+    "category": "회사정보",
+    "question": "후킹포인트는 어떤 회사예요?",
+    "expected": "refuse",
+    "retrieved_ids": [
+      "hookingpoint-about-placeholder-022",
+      "hookingpoint-filmography-summary-023"
+    ],
+    "retrieved_count": 2,
+    "answer": "후킹포인트는 2019년부터 2026년까지 로맨스, 코미디, 범죄·느와르, 사극 법정극 등 다양한 장르의 영화와 드라마 편집에 총 10편 참여한 제작사입니다 [1][2]. 공식 회사 소개 문단은 아직 게시되지 않았으나, 연락처와 필모그래피를 통해 활발한 활동을 확인할 수 있습니다 [1].",
+    "judge": {
+      "groundedness": 0.9,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "근거자료에 기반하여 답변이 작성되었으나 제작사라는 표현은 자료에 명시되어 있지 않습니다."
+    }
+  },
+  {
+    "id": 34,
+    "category": "회사정보",
+    "question": "연락처가 어떻게 되나요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-contact-company",
+      "hookingpoint-about-placeholder-022"
+    ],
+    "retrieved_count": 2,
+    "answer": "영화·드라마 제작사 후킹포인트의 연락처는 이메일(hooking.point@gmail.com)로 문의하실 수 있습니다 [1]. 편집 의뢰, IP 자료 요청, 협업 제안 모두 환영하고 있습니다 [1].",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "제공된 근거자료의 내용을 정확하게 바탕으로 답변을 작성하였습니다."
+    }
+  },
+  {
+    "id": 35,
+    "category": "회사정보",
+    "question": "후킹포인트가 편집한 작품이 몇 편이에요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-about-placeholder-022",
+      "hookingpoint-filmography-summary-023"
+    ],
+    "retrieved_count": 2,
+    "answer": "후킹포인트는 2019년부터 2026년까지 총 10편의 영화·드라마 편집에 참여했어요 [2]. 로맨스, 코미디, 스릴러 등 다양한 장르의 작품에 함께했답니다 [2].",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "제공된 근거자료에 기반하여 정확하게 답변하였습니다."
+    }
+  },
+  {
+    "id": 36,
+    "category": "회사정보",
+    "question": "IP 프로젝트는 어떻게 열람하나요?",
+    "expected": "grounded",
+    "retrieved_ids": [
+      "hookingpoint-ip-development-policy-024",
+      "hookingpoint-contact-company"
+    ],
+    "retrieved_count": 2,
+    "answer": "현재 개발 중인 오리지널 IP 프로젝트의 상세정보는 관리자로부터 열람 권한을 부여받은 회원만 확인하실 수 있습니다 [1]. 열람을 원하시는 경우, 이메일(hooking.point@gmail.com)로 문의해 주시기 바랍니다 [1].",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": null,
+      "unsupported_claims": false,
+      "note": "근거자료의 내용을 정확하고 충실하게 반영하여 답변하였습니다."
+    }
+  },
+  {
+    "id": 37,
+    "category": "회사정보",
+    "question": "채용 중인가요?",
+    "expected": "refuse",
+    "retrieved_ids": [
+      "hookingpoint-ip-development-policy-024"
+    ],
+    "retrieved_count": 1,
+    "answer": "제공된 자료에서는 채용과 관련된 내용을 확인할 수 없어요 [1]. \n\n관련 문의는 hooking.point@gmail.com으로 해 주시기 바랍니다 [1].",
+    "judge": {
+      "groundedness": 1.0,
+      "refusal_appropriate": true,
+      "unsupported_claims": false,
+      "note": "근거자료에 채용 정보가 없음을 올바르게 안내하고 문의처를 정확히 기재했습니다."
+    }
+  }
+]

@@ -4,3 +4,4 @@ dist/
 *.local
 *.tsbuildinfo
 src/*.js
+eval/__pycache__/
