@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>후킹포인트 문의 챗봇</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <div class="frame">
+
+      <!-- ============ HOME ============ -->
+      <section class="panel is-active" data-panel="home">
+        <div class="topbar">
+          <div class="brand-mark"><img src="/favicon.png" alt="Hooking Point" /></div>
+          <div class="brand-text">
+            <div class="brand-name">HOOKING POINT</div>
+            <div class="brand-sub">문의 안내 챗봇</div>
+          </div>
+        </div>
+        <div class="home-scroll">
+          <div class="greet-block">
+            <div class="greet-line1">안녕하세요, 후킹포인트예요 🎬</div>
+            <div class="greet-line2">무엇이 궁금하신가요?</div>
+            <div class="greet-meta"><span class="dot"><img src="/favicon.png" alt="" /></span> 후킹포인트 · 자동 안내</div>
+          </div>
+
+          <div class="pill-list" id="cat-list"></div>
+
+          <div class="trust-line"><span data-icon="search"></span> 출처가 있는 답변만 드려요</div>
+        </div>
+      </section>
+
+      <!-- ============ CHAT ============ -->
+      <section class="panel" data-panel="chat">
+        <div class="chat-header">
+          <button class="chat-back" id="chat-back" aria-label="홈으로" data-icon="back"></button>
+          <div>
+            <div class="chat-cat-label" id="chat-cat-label">-</div>
+            <div class="chat-cat-hint" id="chat-cat-hint">-</div>
+          </div>
+        </div>
+        <div class="msg-scroll" id="msg-scroll">
+          <div class="empty-chat" id="empty-chat">궁금한 점을 입력해보세요.</div>
+        </div>
+        <div class="suggest-row" id="suggest-row"></div>
+        <div class="cta-row" id="cta-row"></div>
+        <div class="key-warning" id="key-warning" style="display:none">
+          <span>API 키가 아직 없어요. 설정 탭에서 Gemini API 키를 입력하면 실제 답변을 받아볼 수 있어요.</span>
+          <button id="go-settings-from-warning">설정으로 이동</button>
+        </div>
+        <form class="composer" id="composer">
+          <input id="chat-input" type="text" placeholder="메시지를 입력하세요" autocomplete="off" />
+          <button type="submit" id="send-btn" data-icon="send"></button>
+        </form>
+      </section>
+
+      <!-- ============ SETTINGS ============ -->
+      <section class="panel" data-panel="settings">
+        <div class="topbar"><div class="brand-text"><div class="brand-name" style="font-size:1rem">설정</div></div></div>
+        <div class="settings-scroll">
+          <div class="field-group">
+            <label class="field-label" for="api-key-input">Gemini API 키</label>
+            <input id="api-key-input" type="password" placeholder="AIza..." autocomplete="off" />
+            <div class="field-help">
+              키는 이 브라우저에만 저장되고 서버로 전송되지 않아요. 무료 키는 Google AI Studio(aistudio.google.com)에서 발급받을 수 있어요.
+            </div>
+            <button class="btn-primary" id="save-key-btn">저장</button>
+            <span class="save-toast" id="save-toast" style="display:none">저장했어요 ✓</span>
+          </div>
+
+          <div class="info-card">
+            <strong>생성 엔진</strong> — Gemini 2.0 Flash (사용자 API 키로 직접 호출, BYOK)<br />
+            다른 엔진(OpenAI 등) 선택은 다음 업데이트에서 추가될 예정이에요.
+          </div>
+          <div class="info-card">
+            <strong>검색 방식</strong> — 현재 버전은 BM25 키워드 검색만 사용해요.<br />
+            임베딩 기반 의미 검색(코사인 유사도)은 다음 업데이트에서 추가될 예정이에요.
+          </div>
+
+          <div class="field-group">
+            <label class="field-label">대화 기록 초기화</label>
+            <div class="field-help">모든 카테고리의 대화 내용을 지웁니다.</div>
+            <button class="btn-ghost" id="clear-chats-btn">전체 대화 지우기</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ BOTTOM NAV ============ -->
+      <nav class="bottom-nav">
+        <button class="nav-btn is-active" data-tab="home" data-icon="home-line"><span data-icon="home"></span><span>홈</span></button>
+        <button class="nav-btn" data-tab="chat" data-icon="chat-line"><span data-icon="chat"></span><span>대화</span></button>
+        <button class="nav-btn" data-tab="settings" data-icon="settings-line"><span data-icon="settings"></span><span>설정</span></button>
+      </nav>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-backdrop">
+    <div class="modal-box">
+      <div class="m-badge" id="modal-badge"></div>
+      <h4 id="modal-title">-</h4>
+      <div class="m-text" id="modal-text">-</div>
+      <div class="m-url" id="modal-url">-</div>
+      <button class="m-close" id="modal-close">닫기</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
